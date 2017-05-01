@@ -91,9 +91,10 @@ public class Principal extends javax.swing.JFrame {
 
     private void jMenuItem2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem2ActionPerformed
         // TODO add your handling code here:
-        JDialogNuevaEcuacion.setLocationRelativeTo(null);
-        JDialogNuevaEcuacion.setBounds(0, 0, 500, 500);
+        JDialogNuevaEcuacion.setSize(650,410);
         JDialogNuevaEcuacion.setVisible(true);
+        JDialogNuevaEcuacion.setLocationRelativeTo(null);
+
     }//GEN-LAST:event_jMenuItem2ActionPerformed
 
 
