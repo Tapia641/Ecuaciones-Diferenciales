@@ -20,6 +20,7 @@ public class EcuacionesDiferenciales {
     public static void main(String[] args) {
         Principal t=new Principal();
         t.setVisible(true);
+        t.setSize(750,738);
         t.setTitle("Ecuaciones Diferenciales");
         t.setLocationRelativeTo(null);
     }

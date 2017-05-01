@@ -5,7 +5,6 @@
  */
 package interfaz;
 
-import javax.swing.JDialog;
 
 /**
  *
@@ -31,7 +30,12 @@ public class Principal extends javax.swing.JFrame {
 
         JDialogNuevaEcuacion = new javax.swing.JDialog();
         jLabel2 = new javax.swing.JLabel();
+        JDialogNuevaEcuacionN = new javax.swing.JDialog();
+        jLabel3 = new javax.swing.JLabel();
+        jButtonEcuacion = new javax.swing.JButton();
+        jButtonInfo = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
+        jButtonEcuacionN = new javax.swing.JButton();
         jMenuBar1 = new javax.swing.JMenuBar();
         jMenu1 = new javax.swing.JMenu();
         jMenuItem2 = new javax.swing.JMenuItem();
@@ -50,9 +54,38 @@ public class Principal extends javax.swing.JFrame {
             .addComponent(jLabel2)
         );
 
+        jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/ecuacion.jpg"))); // NOI18N
+
+        javax.swing.GroupLayout JDialogNuevaEcuacionNLayout = new javax.swing.GroupLayout(JDialogNuevaEcuacionN.getContentPane());
+        JDialogNuevaEcuacionN.getContentPane().setLayout(JDialogNuevaEcuacionNLayout);
+        JDialogNuevaEcuacionNLayout.setHorizontalGroup(
+            JDialogNuevaEcuacionNLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jLabel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+        );
+        JDialogNuevaEcuacionNLayout.setVerticalGroup(
+            JDialogNuevaEcuacionNLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jLabel3)
+        );
+
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/ipn.png"))); // NOI18N
+        jButtonEcuacion.setText("Nueva Ecuación");
+        jButtonEcuacion.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButtonEcuacionActionPerformed(evt);
+            }
+        });
+
+        jButtonInfo.setText("Información");
+
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/fondo.png"))); // NOI18N
+
+        jButtonEcuacionN.setText("Nueva Ecuación N");
+        jButtonEcuacionN.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButtonEcuacionNActionPerformed(evt);
+            }
+        });
 
         jMenu1.setText("Archivo");
 
@@ -65,6 +98,11 @@ public class Principal extends javax.swing.JFrame {
         jMenu1.add(jMenuItem2);
 
         jMenuItem1.setText("Salir");
+        jMenuItem1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItem1ActionPerformed(evt);
+            }
+        });
         jMenu1.add(jMenuItem1);
 
         jMenuBar1.add(jMenu1);
@@ -75,13 +113,34 @@ public class Principal extends javax.swing.JFrame {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addContainerGap(49, Short.MAX_VALUE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(jButtonEcuacionN, javax.swing.GroupLayout.DEFAULT_SIZE, 180, Short.MAX_VALUE)
+                    .addComponent(jButtonEcuacion, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jButtonInfo, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addGap(513, 513, 513))
+            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(layout.createSequentialGroup()
+                    .addGap(0, 0, Short.MAX_VALUE)
+                    .addComponent(jLabel1)
+                    .addGap(0, 0, Short.MAX_VALUE)))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addGap(0, 16, Short.MAX_VALUE)
-                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 659, javax.swing.GroupLayout.PREFERRED_SIZE))
+            .addGroup(layout.createSequentialGroup()
+                .addGap(65, 65, 65)
+                .addComponent(jButtonEcuacion)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jButtonEcuacionN)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jButtonInfo)
+                .addContainerGap(495, Short.MAX_VALUE))
+            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(layout.createSequentialGroup()
+                    .addGap(0, 0, Short.MAX_VALUE)
+                    .addComponent(jLabel1)
+                    .addGap(0, 0, Short.MAX_VALUE)))
         );
 
         pack();
@@ -91,15 +150,41 @@ public class Principal extends javax.swing.JFrame {
         // TODO add your handling code here:
         JDialogNuevaEcuacion.setSize(640,400);
         JDialogNuevaEcuacion.setVisible(true);
+        JDialogNuevaEcuacion.setTitle("Ingrese Los Datos");
         JDialogNuevaEcuacion.setLocationRelativeTo(null);
 
     }//GEN-LAST:event_jMenuItem2ActionPerformed
 
+    private void jButtonEcuacionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonEcuacionActionPerformed
+        // TODO add your handling code here:
+        JDialogNuevaEcuacion.setSize(640,400);
+        JDialogNuevaEcuacion.setVisible(true);
+        JDialogNuevaEcuacion.setTitle("Ingrese Los Datos");
+        JDialogNuevaEcuacion.setLocationRelativeTo(null);
+    }//GEN-LAST:event_jButtonEcuacionActionPerformed
+
+    private void jMenuItem1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jMenuItem1ActionPerformed
+
+    private void jButtonEcuacionNActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonEcuacionNActionPerformed
+        // TODO add your handling code here:
+        JDialogNuevaEcuacionN.setSize(640,400);
+        JDialogNuevaEcuacionN.setVisible(true);
+        JDialogNuevaEcuacionN.setTitle("Ingrese Los Datos");
+        JDialogNuevaEcuacionN.setLocationRelativeTo(null);
+    }//GEN-LAST:event_jButtonEcuacionNActionPerformed
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JDialog JDialogNuevaEcuacion;
+    private javax.swing.JDialog JDialogNuevaEcuacionN;
+    private javax.swing.JButton jButtonEcuacion;
+    private javax.swing.JButton jButtonEcuacionN;
+    private javax.swing.JButton jButtonInfo;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
     private javax.swing.JMenu jMenu1;
     private javax.swing.JMenuBar jMenuBar1;
     private javax.swing.JMenuItem jMenuItem1;
