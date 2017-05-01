@@ -5,6 +5,10 @@
  */
 package interfaz;
 
+import static java.lang.Math.abs;
+import static java.lang.Math.sqrt;
+import javax.swing.JOptionPane;
+
 
 /**
  *
@@ -30,8 +34,22 @@ public class Principal extends javax.swing.JFrame {
 
         JDialogNuevaEcuacion = new javax.swing.JDialog();
         jLabel2 = new javax.swing.JLabel();
+        jTextFieldY2 = new javax.swing.JTextField();
+        jTextFieldY1 = new javax.swing.JTextField();
+        jTextFieldY = new javax.swing.JTextField();
+        jLabel4 = new javax.swing.JLabel();
+        jLabel5 = new javax.swing.JLabel();
+        jLabel6 = new javax.swing.JLabel();
+        jLabel7 = new javax.swing.JLabel();
+        jButtonResolver1 = new javax.swing.JButton();
+        jButtonLib1 = new javax.swing.JButton();
+        jButtonRegresar = new javax.swing.JButton();
+        jLabel8 = new javax.swing.JLabel();
         JDialogNuevaEcuacionN = new javax.swing.JDialog();
         jLabel3 = new javax.swing.JLabel();
+        jPanelResultado = new javax.swing.JPanel();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        jTextAreaRes = new javax.swing.JTextArea();
         jButtonEcuacion = new javax.swing.JButton();
         jButtonInfo = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
@@ -41,17 +59,98 @@ public class Principal extends javax.swing.JFrame {
         jMenuItem2 = new javax.swing.JMenuItem();
         jMenuItem1 = new javax.swing.JMenuItem();
 
-        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/ecuacion.jpg"))); // NOI18N
+        jTextFieldY2.setFont(new java.awt.Font("Tahoma", 1, 36)); // NOI18N
+
+        jTextFieldY1.setFont(new java.awt.Font("Tahoma", 1, 36)); // NOI18N
+
+        jTextFieldY.setFont(new java.awt.Font("Tahoma", 1, 36)); // NOI18N
+
+        jLabel4.setFont(new java.awt.Font("Tahoma", 1, 36)); // NOI18N
+        jLabel4.setText("= 0");
+
+        jLabel5.setFont(new java.awt.Font("Tahoma", 1, 36)); // NOI18N
+        jLabel5.setText("y");
+
+        jLabel6.setFont(new java.awt.Font("Tahoma", 1, 36)); // NOI18N
+        jLabel6.setText("y'' +");
+
+        jLabel7.setFont(new java.awt.Font("Tahoma", 1, 36)); // NOI18N
+        jLabel7.setText("y' +");
+
+        jButtonResolver1.setText("Resolver");
+        jButtonResolver1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButtonResolver1ActionPerformed(evt);
+            }
+        });
+
+        jButtonLib1.setText("Libreria");
+
+        jButtonRegresar.setText("Regresar");
+        jButtonRegresar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButtonRegresarActionPerformed(evt);
+            }
+        });
+
+        jLabel8.setFont(new java.awt.Font("Tahoma", 1, 36)); // NOI18N
+        jLabel8.setText("Ecuación de orden 2:");
 
         javax.swing.GroupLayout JDialogNuevaEcuacionLayout = new javax.swing.GroupLayout(JDialogNuevaEcuacion.getContentPane());
         JDialogNuevaEcuacion.getContentPane().setLayout(JDialogNuevaEcuacionLayout);
         JDialogNuevaEcuacionLayout.setHorizontalGroup(
             JDialogNuevaEcuacionLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addComponent(jLabel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addGroup(JDialogNuevaEcuacionLayout.createSequentialGroup()
+                .addContainerGap(79, Short.MAX_VALUE)
+                .addGroup(JDialogNuevaEcuacionLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel8, javax.swing.GroupLayout.PREFERRED_SIZE, 420, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(JDialogNuevaEcuacionLayout.createSequentialGroup()
+                        .addGroup(JDialogNuevaEcuacionLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(JDialogNuevaEcuacionLayout.createSequentialGroup()
+                                .addComponent(jTextFieldY2, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(jLabel6)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(jTextFieldY1, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addComponent(jLabel7)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(jTextFieldY, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(jButtonResolver1, javax.swing.GroupLayout.PREFERRED_SIZE, 147, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(JDialogNuevaEcuacionLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jButtonLib1, javax.swing.GroupLayout.PREFERRED_SIZE, 155, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGroup(JDialogNuevaEcuacionLayout.createSequentialGroup()
+                                .addComponent(jLabel5)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(jLabel4))
+                            .addComponent(jButtonRegresar, javax.swing.GroupLayout.PREFERRED_SIZE, 155, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                .addGap(60, 60, 60))
         );
         JDialogNuevaEcuacionLayout.setVerticalGroup(
             JDialogNuevaEcuacionLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jLabel2)
+            .addGroup(JDialogNuevaEcuacionLayout.createSequentialGroup()
+                .addComponent(jLabel2)
+                .addGap(39, 39, 39)
+                .addComponent(jLabel8, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(39, 39, 39)
+                .addGroup(JDialogNuevaEcuacionLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(jLabel6, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(JDialogNuevaEcuacionLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(jLabel7, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jTextFieldY, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 48, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jTextFieldY1)
+                    .addComponent(jTextFieldY2))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 139, Short.MAX_VALUE)
+                .addGroup(JDialogNuevaEcuacionLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jButtonResolver1)
+                    .addComponent(jButtonLib1))
+                .addGap(23, 23, 23)
+                .addComponent(jButtonRegresar)
+                .addContainerGap())
         );
 
         jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/ecuacion.jpg"))); // NOI18N
@@ -65,6 +164,27 @@ public class Principal extends javax.swing.JFrame {
         JDialogNuevaEcuacionNLayout.setVerticalGroup(
             JDialogNuevaEcuacionNLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addComponent(jLabel3)
+        );
+
+        jTextAreaRes.setColumns(20);
+        jTextAreaRes.setRows(5);
+        jScrollPane1.setViewportView(jTextAreaRes);
+
+        javax.swing.GroupLayout jPanelResultadoLayout = new javax.swing.GroupLayout(jPanelResultado);
+        jPanelResultado.setLayout(jPanelResultadoLayout);
+        jPanelResultadoLayout.setHorizontalGroup(
+            jPanelResultadoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanelResultadoLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 982, Short.MAX_VALUE)
+                .addContainerGap())
+        );
+        jPanelResultadoLayout.setVerticalGroup(
+            jPanelResultadoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanelResultadoLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 609, Short.MAX_VALUE)
+                .addContainerGap())
         );
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -161,6 +281,10 @@ public class Principal extends javax.swing.JFrame {
         JDialogNuevaEcuacion.setVisible(true);
         JDialogNuevaEcuacion.setTitle("Ingrese Los Datos");
         JDialogNuevaEcuacion.setLocationRelativeTo(null);
+        jTextFieldY2.setText(null);
+        jTextFieldY1.setText(null);
+        jTextFieldY.setText(null);
+
     }//GEN-LAST:event_jButtonEcuacionActionPerformed
 
     private void jMenuItem1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem1ActionPerformed
@@ -175,6 +299,36 @@ public class Principal extends javax.swing.JFrame {
         JDialogNuevaEcuacionN.setLocationRelativeTo(null);
     }//GEN-LAST:event_jButtonEcuacionNActionPerformed
 
+    private void jButtonRegresarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonRegresarActionPerformed
+        // TODO add your handling code here:
+        JDialogNuevaEcuacion.setVisible(false);
+    }//GEN-LAST:event_jButtonRegresarActionPerformed
+
+    private void jButtonResolver1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonResolver1ActionPerformed
+        // TODO add your handling code here:
+        double a,b,c,x1,x2,d;//DECLARAMOS LAS VARIABLES CON LAS QUE VAMOS A TRABAJAR
+        String paso1;//UN STRING QUE ALMACENA EL TEXTO
+        a=Double.parseDouble(jTextFieldY2.getText());
+        b=Double.parseDouble(jTextFieldY1.getText());
+        c=Double.parseDouble(jTextFieldY.getText());
+        d=(b*b)-(4*a*c);
+        if(b>0)
+        {
+            x1=(-b+sqrt(d))/(2*a);
+            x2=(-b-sqrt(d))/(2*a);
+            paso1="Raiz 1: "+x1 + " Raiz 2: "+x2;
+        }else
+        {
+            x1=(-b/(2*a))+sqrt(abs(d))/(2*a);
+            x2=(-b/(2*a))-sqrt(abs(d))/(2*a);
+            paso1="Raiz 1: "+ x1 + "i  Raiz 2: "+x2+"i";
+       }
+       jTextAreaRes.setText(paso1);
+       jPanelResultado.setVisible(true);
+       jPanelResultado.setLocation(500, 1000);
+        
+    }//GEN-LAST:event_jButtonResolver1ActionPerformed
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JDialog JDialogNuevaEcuacion;
@@ -182,12 +336,26 @@ public class Principal extends javax.swing.JFrame {
     private javax.swing.JButton jButtonEcuacion;
     private javax.swing.JButton jButtonEcuacionN;
     private javax.swing.JButton jButtonInfo;
+    private javax.swing.JButton jButtonLib1;
+    private javax.swing.JButton jButtonRegresar;
+    private javax.swing.JButton jButtonResolver1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel5;
+    private javax.swing.JLabel jLabel6;
+    private javax.swing.JLabel jLabel7;
+    private javax.swing.JLabel jLabel8;
     private javax.swing.JMenu jMenu1;
     private javax.swing.JMenuBar jMenuBar1;
     private javax.swing.JMenuItem jMenuItem1;
     private javax.swing.JMenuItem jMenuItem2;
+    private javax.swing.JPanel jPanelResultado;
+    private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JTextArea jTextAreaRes;
+    private javax.swing.JTextField jTextFieldY;
+    private javax.swing.JTextField jTextFieldY1;
+    private javax.swing.JTextField jTextFieldY2;
     // End of variables declaration//GEN-END:variables
 }
