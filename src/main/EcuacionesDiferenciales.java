@@ -23,6 +23,7 @@ public class EcuacionesDiferenciales {
         t.setSize(750,738);
         t.setTitle("Ecuaciones Diferenciales");
         t.setLocationRelativeTo(null);
+        
     }
     
 }

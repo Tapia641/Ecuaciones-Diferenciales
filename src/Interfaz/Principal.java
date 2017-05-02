@@ -2,6 +2,7 @@ package interfaz;
 
 import static java.lang.Math.abs;
 import static java.lang.Math.sqrt;
+import javax.swing.JOptionPane;
 
 /**
  *
@@ -12,8 +13,20 @@ public class Principal extends javax.swing.JFrame {
 
     public Principal() {
         initComponents();
+        setDefaultCloseOperation(javax.swing.WindowConstants.DO_NOTHING_ON_CLOSE); 
+        addWindowListener(new java.awt.event.WindowAdapter() {
+            @Override
+            public void windowClosing(java.awt.event.WindowEvent evt) {
+                close();
+            }
+        });
+        
     }
-
+    private void close(){
+        if (JOptionPane.showConfirmDialog(rootPane, "¿Desea realmente salir?",
+                "Salir del sistema", JOptionPane.YES_NO_OPTION) == JOptionPane.YES_OPTION)
+            System.exit(0);
+    }  
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
@@ -311,9 +324,9 @@ public class Principal extends javax.swing.JFrame {
             beta=abs(dato2);
             if(alfa!=0)
             {
-            SP="Entonces: \n Yc= C1"+"(e^"+alfa+")COS("+dato2+")X"+ " + C2"+"(e^"+alfa+")SEN("+dato2+")X \n";
+            SP="Entonces: \n Yc= C1"+"(e^"+alfa+")COS("+dato2+"X)"+ " + C2"+"(e^"+alfa+")SEN("+dato2+"X) \n";
             }else{
-            SP="Entonces: \n Yc= C1COS("+dato2+")X"+ " + C2SEN("+dato2+")X \n";
+            SP="Entonces: \n Yc= C1COS("+dato2+"X)"+ " + C2SEN("+dato2+"X) \n";
             }
 	}else
 	{
