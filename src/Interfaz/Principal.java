@@ -2,8 +2,6 @@ package interfaz;
 
 import static java.lang.Math.abs;
 import static java.lang.Math.sqrt;
-import javax.swing.JOptionPane;
-
 
 /**
  *
@@ -165,14 +163,14 @@ public class Principal extends javax.swing.JFrame {
             jDialogResultadoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jDialogResultadoLayout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 900, Short.MAX_VALUE)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 899, Short.MAX_VALUE)
                 .addContainerGap())
         );
         jDialogResultadoLayout.setVerticalGroup(
             jDialogResultadoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jDialogResultadoLayout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 566, Short.MAX_VALUE)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 564, Short.MAX_VALUE)
                 .addContainerGap())
         );
 
@@ -313,9 +311,9 @@ public class Principal extends javax.swing.JFrame {
             beta=abs(dato2);
             if(alfa!=0)
             {
-            SP="Entonces: \n Yc= C1"+"(e^"+alfa+")COS"+dato2+"X"+ " + C2"+"(e^"+alfa+")SEN"+dato2+"X \n";
+            SP="Entonces: \n Yc= C1"+"(e^"+alfa+")COS("+dato2+")X"+ " + C2"+"(e^"+alfa+")SEN("+dato2+")X \n";
             }else{
-            SP="Entonces: \n Yc= C1COS"+dato2+"X"+ " + C2SEN"+dato2+"X \n";
+            SP="Entonces: \n Yc= C1COS("+dato2+")X"+ " + C2SEN("+dato2+")X \n";
             }
 	}else
 	{
@@ -323,7 +321,12 @@ public class Principal extends javax.swing.JFrame {
             dato4=dato1-dato2;
             paso1="Raiz 1: " + dato3 + " \nRaiz 2: " + dato4+"\n";
             paso2="";
-            SP="Entonces: \n Yc= C1"+"(e^"+dato3+")" + " + C2"+"(e^"+dato4+") \n";
+            if(dato3==dato4)
+                SP="Entonces: \n Yc= C1"+"(e^"+dato3+")" + " + C2X"+"(e^"+dato4+") \n";
+            else
+                SP="Entonces: \n Yc= C1"+"(e^"+dato3+")" + " + C2"+"(e^"+dato4+") \n";
+
+
 	}
 
         
@@ -332,8 +335,8 @@ public class Principal extends javax.swing.JFrame {
         String R="3.- Raíces: \n";
        
         jTextAreaRes.setText(ED+EC+R+paso1+paso2 + SP);
+        jDialogResultado.setBounds(900,900,930,600);
         jDialogResultado.setLocationRelativeTo(null);
-        jDialogResultado.setBounds(900,900,500,500);
         jDialogResultado.setVisible(true);
         
     }//GEN-LAST:event_jButtonResolver1ActionPerformed
