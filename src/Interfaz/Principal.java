@@ -155,6 +155,7 @@ public class Principal extends javax.swing.JFrame {
         );
 
         jTextAreaRes.setColumns(20);
+        jTextAreaRes.setFont(new java.awt.Font("Comic Sans MS", 1, 24)); // NOI18N
         jTextAreaRes.setRows(5);
         jScrollPane1.setViewportView(jTextAreaRes);
 
@@ -294,24 +295,26 @@ public class Principal extends javax.swing.JFrame {
 
     private void jButtonResolver1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonResolver1ActionPerformed
         // TODO add your handling code here:
-        double a,b,c,x1,x2,d;//DECLARAMOS LAS VARIABLES CON LAS QUE VAMOS A TRABAJAR
+        double a,b,c;//DECLARAMOS LAS VARIABLES CON LAS QUE VAMOS A TRABAJAR
         String paso1;//UN STRING QUE ALMACENA EL TEXTO
         a=Double.parseDouble(jTextFieldY2.getText());
         b=Double.parseDouble(jTextFieldY1.getText());
         c=Double.parseDouble(jTextFieldY.getText());
-        d=(b*b)-(4*a*c);
-        if(b>0)
-        {
-            x1=(-b+sqrt(d))/(2*a);
-            x2=(-b-sqrt(d))/(2*a);
-            paso1="Raiz 1: "+x1 + " Raiz 2: "+x2;
-        }else
-        {
-            x1=(-b/(2*a))+sqrt(abs(d))/(2*a);
-            x2=(-b/(2*a))-sqrt(abs(d))/(2*a);
-            paso1="Raiz 1: "+ x1 + "i  Raiz 2: "+x2+"i";
-       }
+	double dato1,dato2,dato3,dato4;//VARIABLES AUXILIARES
+	dato1=(-b)/(2*a);
+	dato2=(b*b)-(4*a*c);
+	if(dato2<0)
+	{
+            dato2=sqrt(abs(dato2))/(2*a);
+            paso1="Raiz 1: "+ dato1 + " + " + dato2 + "i  Raiz 2: " + dato1 + " - " + dato2 + "i";
+	}else
+	{
+            dato3=dato1+dato2;
+            dato4=dato1-dato2;
+            paso1="Raiz 1: " + dato3 + " Raiz 2: " + dato4;
+	}
         jTextAreaRes.setText(paso1);
+        jDialogResultado.setLocationRelativeTo(null);
         jDialogResultado.setVisible(true);
         
     }//GEN-LAST:event_jButtonResolver1ActionPerformed
