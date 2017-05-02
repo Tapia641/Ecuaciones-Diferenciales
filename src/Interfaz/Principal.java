@@ -296,7 +296,7 @@ public class Principal extends javax.swing.JFrame {
     private void jButtonResolver1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonResolver1ActionPerformed
         // TODO add your handling code here:
         double a,b,c;//DECLARAMOS LAS VARIABLES CON LAS QUE VAMOS A TRABAJAR
-        String paso1;//UN STRING QUE ALMACENA EL TEXTO
+        String paso1,paso2;//UN STRING QUE ALMACENA EL TEXTO
         a=Double.parseDouble(jTextFieldY2.getText());
         b=Double.parseDouble(jTextFieldY1.getText());
         c=Double.parseDouble(jTextFieldY.getText());
@@ -306,15 +306,22 @@ public class Principal extends javax.swing.JFrame {
 	if(dato2<0)
 	{
             dato2=sqrt(abs(dato2))/(2*a);
-            paso1="Raiz 1: "+ dato1 + " + " + dato2 + "i  Raiz 2: " + dato1 + " - " + dato2 + "i";
+            paso1="Raiz 1: "+ dato1 + " + " + dato2 + "i  \nRaiz 2: " + dato1 + " - " + dato2 + "i\n";
+            paso2="α = "+dato1 + "; β = " + abs(dato2)+"\n";
 	}else
 	{
             dato3=dato1+dato2;
             dato4=dato1-dato2;
-            paso1="Raiz 1: " + dato3 + " Raiz 2: " + dato4;
+            paso1="Raiz 1: " + dato3 + " \nRaiz 2: " + dato4+"\n";
+            paso2="";
 	}
-        jTextAreaRes.setText(paso1);
+        String ED="1.- Ecuación Diferencial: " + a +"y'' + "+ b +"y' + "+ c +"y = 0 \n";
+        String EC="2.- Ecuación Característica : " + a +"m^2 + "+ b +"m + "+ c +" = 0 \n";
+        String R="3.- Raíces: \n";
+       
+        jTextAreaRes.setText(ED+EC+R+paso1+paso2);
         jDialogResultado.setLocationRelativeTo(null);
+        jDialogResultado.setBounds(900,900,500,500);
         jDialogResultado.setVisible(true);
         
     }//GEN-LAST:event_jButtonResolver1ActionPerformed
