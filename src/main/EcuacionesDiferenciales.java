@@ -13,8 +13,8 @@ import interfaz.Principal;
 	PROFESOR: SILVA MARTINEZ JORGE JAVIER
         @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ 
      
-      ECUACIONES DIFERENCIALES
-      FECHA: 01 DE ABRIL 2017
+        ECUACIONES DIFERENCIALES
+        FECHA: 01 DE ABRIL 2017
 */
 public class EcuacionesDiferenciales {
     public static void main(String[] args) {
