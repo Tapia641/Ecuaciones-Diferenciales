@@ -46,8 +46,8 @@ public class Principal extends javax.swing.JFrame {
         jLabel8 = new javax.swing.JLabel();
         JDialogNuevaEcuacionN = new javax.swing.JDialog();
         jTextField1 = new javax.swing.JTextField();
-        jLabel9 = new javax.swing.JLabel();
         jButton1 = new javax.swing.JButton();
+        jLabel9 = new javax.swing.JLabel();
         jDialogResultado = new javax.swing.JDialog();
         jScrollPane1 = new javax.swing.JScrollPane();
         jTextAreaRes = new javax.swing.JTextArea();
@@ -156,32 +156,32 @@ public class Principal extends javax.swing.JFrame {
 
         jTextField1.setFont(new java.awt.Font("Comic Sans MS", 1, 36)); // NOI18N
 
-        jLabel9.setText("Ingrese Ecuación Ejemplo: 4y'''+2y'-6y = 0");
-
         jButton1.setText("Resolver");
+
+        jLabel9.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/ecuacion2.png"))); // NOI18N
 
         javax.swing.GroupLayout JDialogNuevaEcuacionNLayout = new javax.swing.GroupLayout(JDialogNuevaEcuacionN.getContentPane());
         JDialogNuevaEcuacionN.getContentPane().setLayout(JDialogNuevaEcuacionNLayout);
         JDialogNuevaEcuacionNLayout.setHorizontalGroup(
             JDialogNuevaEcuacionNLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(JDialogNuevaEcuacionNLayout.createSequentialGroup()
-                .addGap(79, 79, 79)
-                .addGroup(JDialogNuevaEcuacionNLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jButton1)
-                    .addComponent(jLabel9)
-                    .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 503, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(88, Short.MAX_VALUE))
+                .addContainerGap()
+                .addGroup(JDialogNuevaEcuacionNLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                    .addComponent(jTextField1)
+                    .addComponent(jButton1, javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel9, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         JDialogNuevaEcuacionNLayout.setVerticalGroup(
             JDialogNuevaEcuacionNLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(JDialogNuevaEcuacionNLayout.createSequentialGroup()
-                .addGap(23, 23, 23)
+                .addContainerGap()
                 .addComponent(jLabel9)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGap(51, 51, 51)
                 .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 67, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(26, 26, 26)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(jButton1)
-                .addContainerGap(62, Short.MAX_VALUE))
+                .addContainerGap())
         );
 
         jTextAreaRes.setColumns(20);
