@@ -1,6 +1,6 @@
-# Proyecto de [Ecuaciones Diferenciales]
+# Proyecto de Ecuaciones Diferenciales.
 
-One Paragraph of project description goes here
+Simple interfaz gráfica que muestra los procedimientos de resolución de una ecuación diferencial de segundo grado.
 
 ## Getting Started
 
@@ -23,9 +23,7 @@ This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md
 
 * **Luis Tapia** - *Initial work* - [Tapia641](https://github.com/Tapia641)
 
-See also the list of [contributors](https://github.com/your/project/contributors) who participated in this project.
-
-## Acknowledgments
+## Conocimientos adquiridos
 
 * Hat tip to anyone whose code was used
 * Inspiration
