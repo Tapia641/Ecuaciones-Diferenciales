@@ -1,1 +1,1 @@
-<h1>Proyecto de ecuaciones Diferenciales </h1>
+<h1>Proyecto de ecuaciones diferenciales </h1>
